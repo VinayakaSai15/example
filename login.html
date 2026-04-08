@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login - Transport Pool</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#e3e9ec",
+                        "on-surface": "#2d3337",
+                        "on-tertiary-container": "#005a43",
+                        "on-secondary-fixed-variant": "#702ae1",
+                        "secondary-fixed": "#eaddff",
+                        "on-primary-fixed-variant": "#003ca5",
+                        "surface-dim": "#d3dbdf",
+                        "surface-container-highest": "#dde3e7",
+                        "surface-variant": "#dde3e7",
+                        "on-surface-variant": "#596063",
+                        "surface-tint": "#0053dc",
+                        "error": "#ac3434",
+                        "secondary-dim": "#681ad9",
+                        "primary-fixed-dim": "#98b1ff",
+                        "tertiary": "#006c52",
+                        "primary": "#0053dc",
+                        "error-container": "#f56965",
+                        "on-primary": "#faf8ff",
+                        "on-background": "#2d3337",
+                        "on-error": "#fff7f6",
+                        "primary-fixed": "#acbfff",
+                        "tertiary-fixed-dim": "#6ee4bb",
+                        "secondary": "#742fe5",
+                        "primary-container": "#acbfff",
+                        "outline-variant": "#acb3b7",
+                        "inverse-primary": "#618bff",
+                        "on-secondary-container": "#6617d7",
+                        "on-primary-container": "#003592",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-container": "#eaddff",
+                        "surface-container": "#eaeef1",
+                        "inverse-on-surface": "#9a9d9f",
+                        "secondary-fixed-dim": "#deccff",
+                        "on-tertiary-fixed-variant": "#00644c",
+                        "outline": "#757c7f",
+                        "background": "#f7f9fb",
+                        "tertiary-container": "#7df2c9",
+                        "on-tertiary-fixed": "#004533",
+                        "tertiary-fixed": "#7df2c9",
+                        "on-tertiary": "#e5fff2",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed": "#5100b3",
+                        "on-error-container": "#65000b",
+                        "surface-container-low": "#f1f4f6",
+                        "inverse-surface": "#0b0f10",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#002265",
+                        "on-secondary": "#fdf7ff",
+                        "tertiary-dim": "#005f48",
+                        "error-dim": "#70030f",
+                        "primary-dim": "#0049c2"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+<style>
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-radius: 20px;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .input-glow:focus-within {
+            box-shadow: 0 0 0 4px rgba(0, 83, 220, 0.15);
+        }
+        /* Suppression of Shell per instructions for Login pages */
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen relative flex items-center justify-center p-4">
+<!-- Background Layer -->
+<div class="fixed inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-br from-primary/40 to-secondary/40 z-10"></div>
+<img alt="University campus street" class="w-full h-full object-cover blur-sm" data-alt="Wide angle view of a modern university campus street with contemporary architecture and lush green trees in soft evening sunlight" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkcQYS8xg6U4O74VNii9QJps7Kgyer7ep4JUk18Kz0IgNPiWNgX3jG3LWvSDwlha4tGgl9HXap9DXRs-BORoJtzvHtNOPBmK5-rbZkbBueD7XtpAm96vLkTQvw13rSCSzAwkhuzLzXcVccdDdmQCtZHgH3ikdveE3IdYNVnXhmgraVMKt7r-CV9MBa9-4Pqu9W-q-AehkYlFzn3ikJoWZibhz_K9uP7GdY7G6oHt9f7NkHVuEIwSmO3Raa15-u_u7H14VjMb8oRBRQ"/>
+</div>
+<!-- Login Container -->
+<main class="relative z-20 w-full max-w-[460px]">
+<div class="glass-card shadow-[0_32px_64px_-16px_rgba(0,0,0,0.1)] border border-white/20 p-8 md:p-12">
+<!-- Brand & Heading -->
+<div class="mb-10 text-center">
+<div class="flex justify-center mb-6">
+<div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center shadow-lg shadow-primary/20">
+<span class="material-symbols-outlined text-white text-3xl" data-weight="fill" style="font-variation-settings: 'FILL' 1;">directions_car</span>
+</div>
+</div>
+<h1 class="font-headline text-3xl font-extrabold tracking-tight text-on-surface mb-2">Transport Pool</h1>
+<p class="text-on-surface-variant font-medium">Log in to your academic commute.</p>
+</div>
+<!-- Form -->
+<form action="#" class="space-y-6">
+<!-- Username/Email Field -->
+<div class="relative group input-glow bg-surface-container-low rounded-xl transition-all duration-300">
+<div class="flex items-center px-4 h-16">
+<span class="material-symbols-outlined text-outline mr-3 select-none">person</span>
+<div class="relative flex-1">
+<input class="peer w-full bg-transparent border-0 p-0 text-on-surface focus:ring-0 placeholder-transparent text-base" id="username" name="username" placeholder="Username or Email" type="text"/>
+<label class="absolute left-0 -top-2 text-primary text-xs font-bold transition-all peer-placeholder-shown:text-base peer-placeholder-shown:font-medium peer-placeholder-shown:text-outline peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:-top-2 peer-focus:text-primary peer-focus:text-xs peer-focus:font-bold" for="username">
+                                Username or Email
+                            </label>
+</div>
+</div>
+</div>
+<!-- Password Field -->
+<div class="relative group input-glow bg-surface-container-low rounded-xl transition-all duration-300">
+<div class="flex items-center px-4 h-16">
+<span class="material-symbols-outlined text-outline mr-3 select-none">lock</span>
+<div class="relative flex-1">
+<input class="peer w-full bg-transparent border-0 p-0 text-on-surface focus:ring-0 placeholder-transparent text-base" id="password" name="password" placeholder="Password" type="password"/>
+<label class="absolute left-0 -top-2 text-primary text-xs font-bold transition-all peer-placeholder-shown:text-base peer-placeholder-shown:font-medium peer-placeholder-shown:text-outline peer-placeholder-shown:top-1/2 peer-placeholder-shown:-translate-y-1/2 peer-focus:-top-2 peer-focus:text-primary peer-focus:text-xs peer-focus:font-bold" for="password">
+                                Password
+                            </label>
+</div>
+<button class="text-outline hover:text-primary transition-colors focus:outline-none" type="button">
+<span class="material-symbols-outlined text-xl select-none">visibility</span>
+</button>
+</div>
+</div>
+<!-- Utilities -->
+<div class="flex items-center justify-between px-1">
+<label class="flex items-center space-x-2 cursor-pointer group">
+<div class="relative flex items-center">
+<input class="peer h-5 w-5 rounded-lg border-outline-variant bg-surface-container-low text-primary focus:ring-primary/20 transition-all" type="checkbox"/>
+</div>
+<span class="text-sm font-medium text-on-surface-variant group-hover:text-on-surface transition-colors">Remember me</span>
+</label>
+<a class="text-sm font-bold text-primary hover:text-primary-dim transition-colors" href="#">Forgot password?</a>
+</div>
+<!-- CTA Button -->
+<button class="w-full bg-primary text-on-primary font-headline font-bold py-4 rounded-xl shadow-lg shadow-primary/25 hover:bg-primary-dim hover:scale-[1.02] active:scale-95 transition-all duration-300 flex items-center justify-center gap-2" type="submit">
+<span>Log In</span>
+<span class="material-symbols-outlined text-xl">arrow_forward</span>
+</button>
+</form>
+<!-- Footer / Sign Up Link -->
+<div class="mt-8 text-center pt-8 border-t border-on-surface/5">
+<p class="text-on-surface-variant font-medium">
+                    Don't have an account? 
+                    <a class="text-primary font-bold hover:underline underline-offset-4 decoration-2" href="#">Sign up</a>
+</p>
+</div>
+</div>
+<!-- System Footer (Simplified for Login) -->
+<div class="mt-8 text-center">
+<p class="font-label text-[10px] uppercase tracking-widest text-white/80 mix-blend-overlay">
+                © 2024 Transport Pool. The Academic Kinetic.
+            </p>
+<div class="flex justify-center gap-6 mt-3">
+<a class="text-[10px] font-label uppercase tracking-widest text-white/60 hover:text-white transition-colors" href="#">Privacy Policy</a>
+<a class="text-[10px] font-label uppercase tracking-widest text-white/60 hover:text-white transition-colors" href="#">Terms of Service</a>
+</div>
+</div>
+</main>
+</body></html>

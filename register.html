@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Register - Transport Pool</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&amp;family=Manrope:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "surface-container-high": "#e3e9ec",
+                        "on-surface": "#2d3337",
+                        "on-tertiary-container": "#005a43",
+                        "on-secondary-fixed-variant": "#702ae1",
+                        "secondary-fixed": "#eaddff",
+                        "on-primary-fixed-variant": "#003ca5",
+                        "surface-dim": "#d3dbdf",
+                        "surface-container-highest": "#dde3e7",
+                        "surface-variant": "#dde3e7",
+                        "on-surface-variant": "#596063",
+                        "surface-tint": "#0053dc",
+                        "error": "#ac3434",
+                        "secondary-dim": "#681ad9",
+                        "primary-fixed-dim": "#98b1ff",
+                        "tertiary": "#006c52",
+                        "primary": "#0053dc",
+                        "error-container": "#f56965",
+                        "on-primary": "#faf8ff",
+                        "on-background": "#2d3337",
+                        "on-error": "#fff7f6",
+                        "primary-fixed": "#acbfff",
+                        "tertiary-fixed-dim": "#6ee4bb",
+                        "secondary": "#742fe5",
+                        "primary-container": "#acbfff",
+                        "outline-variant": "#acb3b7",
+                        "inverse-primary": "#618bff",
+                        "on-secondary-container": "#6617d7",
+                        "on-primary-container": "#003592",
+                        "surface-bright": "#f7f9fb",
+                        "secondary-container": "#eaddff",
+                        "surface-container": "#eaeef1",
+                        "inverse-on-surface": "#9a9d9f",
+                        "secondary-fixed-dim": "#deccff",
+                        "on-tertiary-fixed-variant": "#00644c",
+                        "outline": "#757c7f",
+                        "background": "#f7f9fb",
+                        "tertiary-container": "#7df2c9",
+                        "on-tertiary-fixed": "#004533",
+                        "tertiary-fixed": "#7df2c9",
+                        "on-tertiary": "#e5fff2",
+                        "surface": "#f7f9fb",
+                        "on-secondary-fixed": "#5100b3",
+                        "on-error-container": "#65000b",
+                        "surface-container-low": "#f1f4f6",
+                        "inverse-surface": "#0b0f10",
+                        "surface-container-lowest": "#ffffff",
+                        "on-primary-fixed": "#002265",
+                        "on-secondary": "#fdf7ff",
+                        "tertiary-dim": "#005f48",
+                        "error-dim": "#70030f",
+                        "primary-dim": "#0049c2"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Manrope"],
+                        "label": ["Manrope"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "20px",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: #f7f9fb;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+        }
+        .step-active {
+            @apply text-primary font-bold;
+        }
+        .step-inactive {
+            @apply text-on-surface-variant opacity-50;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col selection:bg-primary-container selection:text-on-primary-container">
+<!-- Top Navigation Bar (Suppressed FAB & Main Nav as per Rule) -->
+<header class="fixed top-0 w-full z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-xl shadow-sm">
+<div class="flex justify-between items-center px-6 py-4 max-w-7xl mx-auto">
+<div class="text-xl font-bold text-blue-600 dark:text-blue-400 italic font-headline tracking-tight">
+                Transport Pool
+            </div>
+<div class="flex items-center gap-4">
+<span class="text-on-surface-variant font-label text-sm hidden md:block">Already have an account?</span>
+<a class="text-blue-600 dark:text-blue-400 font-headline font-semibold text-sm hover:opacity-80 transition-all" href="#">Login</a>
+</div>
+</div>
+</header>
+<main class="flex-grow flex items-center justify-center px-4 pt-24 pb-12 relative overflow-hidden">
+<!-- Abstract Background Shapes -->
+<div class="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] bg-primary/5 rounded-full blur-[100px]"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] bg-secondary/5 rounded-full blur-[100px]"></div>
+<div class="w-full max-w-xl">
+<!-- Registration Card -->
+<div class="glass-panel p-8 md:p-12 rounded-2xl shadow-[0_24px_40px_-15px_rgba(45,51,55,0.08)] relative z-10">
+<!-- Multi-Step Progress Indicator -->
+<div class="flex justify-between items-center mb-10 px-2">
+<div class="flex flex-col items-center gap-2 group">
+<div class="w-10 h-10 rounded-full bg-primary text-on-primary flex items-center justify-center font-bold text-sm shadow-lg shadow-primary/20">1</div>
+<span class="text-xs font-bold text-primary font-headline tracking-tight uppercase">Account</span>
+</div>
+<div class="flex-grow h-[2px] mx-4 bg-surface-container-high mb-6"></div>
+<div class="flex flex-col items-center gap-2 opacity-50">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold text-sm">2</div>
+<span class="text-xs font-medium text-on-surface-variant font-headline tracking-tight uppercase">Profile</span>
+</div>
+<div class="flex-grow h-[2px] mx-4 bg-surface-container-high mb-6"></div>
+<div class="flex flex-col items-center gap-2 opacity-50">
+<div class="w-10 h-10 rounded-full bg-surface-container-highest text-on-surface flex items-center justify-center font-bold text-sm">3</div>
+<span class="text-xs font-medium text-on-surface-variant font-headline tracking-tight uppercase">Preferences</span>
+</div>
+</div>
+<div class="mb-8 text-center md:text-left">
+<h1 class="text-3xl font-headline font-extrabold text-on-surface tracking-tight leading-tight">Join the Network</h1>
+<p class="text-on-surface-variant mt-2 font-body text-sm">Create your credentials to start pooling with your campus peers.</p>
+</div>
+<!-- Registration Form -->
+<form class="space-y-6">
+<!-- Name Input Group -->
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant font-headline tracking-widest uppercase ml-1">Full Name</label>
+<div class="relative flex items-center group">
+<span class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-primary transition-colors">person</span>
+<input id="name" type="text" class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline-variant focus:ring-0 focus:bg-surface-container-high transition-all font-body" placeholder="Johnathan Doe" type="text"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary group-focus-within:w-full transition-all duration-300"></div>
+</div>
+</div>
+<!-- Email Input Group -->
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant font-headline tracking-widest uppercase ml-1">Email Address</label>
+<div class="relative flex items-center group">
+<span class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-primary transition-colors">mail</span>
+<input id="email" type="email" class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline-variant focus:ring-0 focus:bg-surface-container-high transition-all font-body" placeholder="john.doe@university.edu" type="email"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary group-focus-within:w-full transition-all duration-300"></div>
+</div>
+</div>
+<!-- Send OTP -->
+<button type="button" onclick="sendOTP()" 
+class="mt-2 px-4 py-2 bg-blue-500 text-white rounded">
+Send OTP
+</button>
+
+<!-- OTP Input -->
+<input id="otp" type="text" placeholder="Enter OTP"
+class="w-full mt-2 p-3 border rounded" />
+
+<!-- Verify OTP -->
+<button type="button" onclick="verifyOTP()"
+class="mt-2 px-4 py-2 bg-green-500 text-white rounded">
+Verify OTP
+</button>
+<!-- Password Input Group -->
+<div class="space-y-2">
+<label class="block text-xs font-bold text-on-surface-variant font-headline tracking-widest uppercase ml-1">Password</label>
+<div class="relative flex items-center group">
+<span class="material-symbols-outlined absolute left-4 text-outline group-focus-within:text-primary transition-colors">lock</span>
+<input id="password" type="password" class="w-full bg-surface-container-low border-none rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-outline-variant focus:ring-0 focus:bg-surface-container-high transition-all font-body" placeholder="••••••••••••" type="password"/>
+<div class="absolute bottom-0 left-0 w-0 h-[2px] bg-primary group-focus-within:w-full transition-all duration-300"></div>
+</div>
+</div>
+<!-- Gender Selection Modern Toggles -->
+<div class="space-y-3">
+<label class="block text-xs font-bold text-on-surface-variant font-headline tracking-widest uppercase ml-1">Gender</label>
+<div class="grid grid-cols-3 gap-3">
+<label class="cursor-pointer group">
+<input class="hidden peer" name="gender" type="radio"/>
+<div class="flex items-center justify-center gap-2 py-3 bg-surface-container-low text-on-surface-variant rounded-xl font-label text-sm transition-all peer-checked:bg-primary peer-checked:text-on-primary peer-checked:shadow-lg peer-checked:shadow-primary/20 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">male</span>
+<span>Male</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="gender" type="radio"/>
+<div class="flex items-center justify-center gap-2 py-3 bg-surface-container-low text-on-surface-variant rounded-xl font-label text-sm transition-all peer-checked:bg-primary peer-checked:text-on-primary peer-checked:shadow-lg peer-checked:shadow-primary/20 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">female</span>
+<span>Female</span>
+</div>
+</label>
+<label class="cursor-pointer group">
+<input class="hidden peer" name="gender" type="radio"/>
+<div class="flex items-center justify-center gap-2 py-3 bg-surface-container-low text-on-surface-variant rounded-xl font-label text-sm transition-all peer-checked:bg-primary peer-checked:text-on-primary peer-checked:shadow-lg peer-checked:shadow-primary/20 hover:bg-surface-container-high">
+<span class="material-symbols-outlined text-[18px]">contrast</span>
+<span>Other</span>
+</div>
+</label>
+</div>
+</div>
+<!-- Terms Checkbox -->
+<div class="flex items-start gap-3 pt-2">
+<div class="relative flex items-center mt-1">
+<input class="w-5 h-5 rounded bg-surface-container-high border-none text-primary focus:ring-0 cursor-pointer" type="checkbox"/>
+</div>
+<p class="text-xs text-on-surface-variant font-body leading-relaxed">
+                            I agree to the <a class="text-primary font-semibold hover:underline" href="#">Terms of Service</a> and <a class="text-primary font-semibold hover:underline" href="#">Privacy Policy</a>.
+                        </p>
+</div>
+<!-- CTA Button -->
+<button class="w-full py-4 bg-primary text-on-primary rounded-xl font-headline font-bold text-base shadow-xl shadow-primary/25 hover:bg-primary-dim active:scale-[0.98] transition-all duration-200 mt-4 flex items-center justify-center gap-2" type="submit">
+                        Create Account
+                        <span class="material-symbols-outlined text-[20px]">arrow_forward</span>
+</button>
+</form>
+</div>
+<!-- Supporting Text -->
+<div class="mt-8 text-center space-y-4">
+<p class="text-on-surface-variant font-body text-xs flex items-center justify-center gap-2">
+<span class="material-symbols-outlined text-[16px]">verified_user</span>
+                    Secured by Campus-Wide Authentication
+                </p>
+</div>
+</div>
+</main>
+<!-- Footer Component -->
+<footer class="w-full border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900 mt-auto">
+<div class="flex flex-col md:flex-row justify-between items-center px-8 py-12 max-w-7xl mx-auto">
+<span class="text-slate-400 font-['Manrope'] text-xs uppercase tracking-widest">© 2024 Transport Pool. The Academic Kinetic.</span>
+<div class="flex gap-8 mt-6 md:mt-0">
+<a class="text-slate-400 hover:text-blue-500 transition-colors font-['Manrope'] text-xs uppercase tracking-widest" href="#">Privacy Policy</a>
+<a class="text-slate-400 hover:text-blue-500 transition-colors font-['Manrope'] text-xs uppercase tracking-widest" href="#">Terms of Service</a>
+<a class="text-slate-400 hover:text-blue-500 transition-colors font-['Manrope'] text-xs uppercase tracking-widest" href="#">Campus Safety</a>
+</div>
+</div>
+</footer>
+<script>
+const emailRegex = /^[a-zA-Z]+\.(20|21|22|23|24|25)[a-z]{3}\d+@vitapstudent\.ac\.in$/;
+let otpVerified = false;
+
+function isValidEmail(email) {
+  if (!emailRegex.test(email)) return false;
+
+  const match = email.match(/\d+(?=@vitapstudent\.ac\.in)/);
+  const number = parseInt(match[0]);
+
+  return (number >= 7000 && number <= 9999) || number >= 20000;
+}
+
+async function sendOTP() {
+  const email = document.getElementById("email").value;
+
+  if (!isValidEmail(email)) {
+    alert("Invalid college email!");
+    return;
+  }
+
+  const res = await fetch("http://localhost:3000/send-otp", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ email })
+  });
+
+  const data = await res.json();
+  alert(data.message);
+}
+
+async function verifyOTP() {
+  const email = document.getElementById("email").value;
+  const otp = document.getElementById("otp").value;
+
+  const res = await fetch("http://localhost:3000/verify-otp", {
+    method: "POST",
+    headers: {"Content-Type": "application/json"},
+    body: JSON.stringify({ email, otp })
+  });
+
+  const data = await res.json();
+
+  if (data.success) {
+    alert("OTP Verified ✅");
+    otpVerified = true;
+  } else {
+    alert("Invalid OTP ❌");
+  }
+}
+
+document.querySelector("form").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const email = document.getElementById("email").value;
+  const password = document.getElementById("password").value;
+
+  if (!name) return alert("Name required");
+  if (!isValidEmail(email)) return alert("Invalid email");
+  if (!otpVerified) return alert("Verify OTP first");
+  if (password.length < 6) return alert("Weak password");
+
+  await fetch("http://localhost:3000/register", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({
+    name,
+    email,
+    password
+  })
+});
+
+alert("Account Created 🎉");
+});
+</script>
+
+</body></html>
+
